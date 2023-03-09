@@ -1,0 +1,383 @@
+.header{
+    height: 120px;
+    background-image: linear-gradient(0, #fe6433, #f53e2d);
+}
+
+.header__navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navbar-list{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 4px;
+}
+
+
+.header__navbar-item,
+.header__navbar-item-link{
+    display: inline-block;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 300;
+}
+.header__navbar-list,
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon-link
+{
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__navbar-item:hover,
+.header__navbar-list-link:hover,
+.header__navbar-icon-link:hover{
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.header__navbar-item--has-qr:hover .header__qr{
+    display: block;
+}
+
+.header__navbar-item{
+    margin: 0 8px;
+    position: relative;
+    min-height: 26px;
+}
+
+.header__navbar-item--strong{
+    font-weight: 800px;
+    
+}
+
+.header__navbar-item--separate::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #FB9086;
+    height: 12px;
+    right: -8.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__navbar-icon-link,
+.header__navbar-item-link
+{
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+
+.header__navbar-item:hover .header__notify{
+    display: block;
+    transform-origin: top right;
+    animation: Notify-ani ease-in 0.25s;
+}
+
+@keyframes Notify-ani{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header__navbar-icon{
+    font-size: 1.8rem;
+    margin: 0 4px;
+}
+
+.header__navbar-title--no-pointer{
+    cursor: text;
+    color: var(--white-color);
+}
+
+
+/* Header QR code */
+.header__qr{
+    width: 186px;
+    background-color: var(--white-color);
+    position: absolute;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    top: 120%;
+    left: 0;
+    animation: fadeIn ease-in 0.6s;
+}
+
+.header__qr::before{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    left: 0;
+    top: -16px;
+    content: "";
+    display: block;
+}
+
+.header__qr-img{
+    width: 100%;
+}
+
+.header__qr-apps{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__qr-download-img{
+    height: 15px;
+}
+
+.header__qr-link:first-child{
+    margin-left: 11px
+}
+
+.header__qr-link:nth-child(2){
+    margin-right: 11px;
+}
+
+
+
+/* header notification */
+
+.header__notify{
+    position: absolute;
+    top: 118%;
+    width: 404px;
+    right: 0;
+    border: 1px solid #d3d3d3;
+    background-color: var(--white-color);
+    display: none;
+    cursor: default;
+}
+
+.header__notify::before{
+    content: "";
+    border-style:solid;
+    border-width: 20px 30px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 12px;
+    top: -30px;
+}
+
+.header__notify-header{
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__notify-header h3{
+    color: #888;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+    
+}
+
+.header__notify-list{
+    padding-left: 0;
+}
+
+.header__notify-item{
+    list-style: none;
+}
+
+.header__notify-item--viewed{
+    
+    background-color: rgba(238, 75, 43,0.09);
+}
+
+.header__notify-item:hover{
+    background-color: #f1f1f1;
+}
+
+.header__notify-link{
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.header__nmotify-img{
+    width: 48px;
+    object-fit: contain;
+}
+
+.header__notify-info{
+    margin-left: 12px;
+}
+
+.header__notify-name{
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.header__notify-description{
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #756f6e;
+}
+
+.header__notify-footer{
+    display: flex;
+    
+}
+
+.header__notify-footer-btn{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 48px;
+    margin: auto;
+}
+
+
+/* authen modal */
+.auth-form{
+    width: 500px;
+}
+
+.auth-form-container{
+    padding: 0 32px;
+}
+.auth-form__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-form__heading{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.auth-form__switch-btn{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.auth-form__form{
+}
+
+.auth-form__input{
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    outline: none;
+}
+
+.auth-form__input:focus{
+    border-color: #777;
+}
+
+.auth-form__aside{
+    margin-top: 18px;
+}
+
+.auth-form__policy-text{
+    font-size: 1.2rem;
+    line-height: 1.8rem ;
+    text-align: center;
+}
+
+.auth-form__text-link{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.auth-form__controls{
+    margin-top: 80px;
+}
+
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn{
+    min-width: 142px;
+    height: 34px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+
+    font-size: 1.5rem;
+    padding: 0;
+    outline: none;  
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+
+.bnt.btn--size-s{
+    height: 32px;
+    font-size: 12px;
+}
+
+.auth-form__socials{
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.btn.btn--with-icon{
+    text-decoration: none;
+}
+
+.btn-with-icon-face{
+    width: 180px;
+    background-color: #2d3fa5;
+    color: var(--white-color);
+}
+
+.btn-with-icon-face i {
+    padding: 5px;
+}
+
+.btn--with-icon-gg{
+    width: 180px;
+    background-color: #f1ecec;
+    color: var(--text-color);
+}
+
+.btn-with-icon-gg i {
+    padding: 5px;
+}
+
+
